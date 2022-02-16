@@ -8,7 +8,7 @@ class ZlibConan(ConanFile):
     name = "zlib"
     description = ("A Massively Spiffy Yet Delicately Unobtrusive Compression Library "
                   "(Also Free, Not to Mention Unencumbered by Patents)")
-    topics = ("conan", "zlib", "compression")
+    topics = ("zlib", "compression")
     url = "https://github.com/conan-io/conan-center-index"
     homepage = "https://zlib.net"
     license = "Zlib"
