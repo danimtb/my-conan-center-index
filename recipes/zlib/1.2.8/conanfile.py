@@ -40,7 +40,7 @@ class ZlibConan(ConanFile):
         tools.get(**self.conan_data["sources"][self.version])
         os.rename("{}-{}".format(self.name, self.version), self._source_subfolder)
         tools.rmdir(os.path.join(self._source_subfolder, "contrib"))
-        if not tools.os_info.is_windows:
+        if self.settings.os != "Windows":
             configure_file = os.path.join(self._source_subfolder, "configure")
             st = os.stat(configure_file)
             os.chmod(configure_file, st.st_mode | stat.S_IEXEC)
