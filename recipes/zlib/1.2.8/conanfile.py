@@ -17,6 +17,7 @@ class ZlibConan(ConanFile):
     default_options = {"shared": False, "fPIC": True}
     exports_sources = ["CMakeLists.txt"]
     generators = "cmake"
+    # comment
 
     @property
     def _source_subfolder(self):
