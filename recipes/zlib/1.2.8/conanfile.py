@@ -8,7 +8,7 @@ class ZlibConan(ConanFile):
     name = "zlib"
     description = ("A Massively Spiffy Yet Delicately Unobtrusive Compression Library "
                   "(Also Free, Not to Mention Unencumbered by Patents)")
-    topics = ("conan", "zlib", "compression")
+    topics = ("zlib", "compression")
     url = "https://github.com/conan-io/conan-center-index"
     homepage = "https://zlib.net"
     license = "Zlib"
@@ -17,6 +17,7 @@ class ZlibConan(ConanFile):
     default_options = {"shared": False, "fPIC": True}
     exports_sources = ["CMakeLists.txt"]
     generators = "cmake"
+    # comment
 
     @property
     def _source_subfolder(self):
@@ -40,7 +41,7 @@ class ZlibConan(ConanFile):
         tools.get(**self.conan_data["sources"][self.version])
         os.rename("{}-{}".format(self.name, self.version), self._source_subfolder)
         tools.rmdir(os.path.join(self._source_subfolder, "contrib"))
-        if not tools.os_info.is_windows:
+        if self.settings.os != "Windows":
             configure_file = os.path.join(self._source_subfolder, "configure")
             st = os.stat(configure_file)
             os.chmod(configure_file, st.st_mode | stat.S_IEXEC)
