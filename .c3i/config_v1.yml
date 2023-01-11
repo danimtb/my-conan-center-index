@@ -94,7 +94,7 @@ jenkins:
 node_labels:
   Windows:
     x86_64:
-      "msvc":
+      "Visual Studio":
         default: "windows"
   Macos:
     x86_64:
@@ -106,9 +106,11 @@ node_labels:
   Linux:
     x86_64:
       "gcc":
-        default: "linux_gcc_${compiler.version}_ubuntu16.04"
+        default: "linux_gcc_${compiler.version}"
+        "11": "linux_gcc_${compiler.version}_ubuntu16.04"
       "clang":
         default: "linux_clang_${compiler.version}_ubuntu16.04"
+        "11": "linux_clang_${compiler.version}"
 
 pod_size:
   # Map with references that need special memory resources to compile.
