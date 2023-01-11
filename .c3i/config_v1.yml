@@ -56,10 +56,9 @@ jenkins:
   url: "http://mb-jenkins-my-bloody-jenkins:8080"
 
 node_labels:
-  default: "linux_gcc_8.0"
   Windows:
     x86_64:
-      "Visual Studio":
+      "msvc":
         default: "windows"
   Macos:
     x86_64:
@@ -71,11 +70,9 @@ node_labels:
   Linux:
     x86_64:
       "gcc":
-        default: "linux_gcc_${compiler.version}"
-        "11": "linux_gcc_${compiler.version}_ubuntu16.04"
+        default: "linux_gcc_${compiler.version}_ubuntu16.04"
       "clang":
         default: "linux_clang_${compiler.version}_ubuntu16.04"
-        "11": "linux_clang_${compiler.version}"
 
 pod_size:
   # Map with references that need special memory resources to compile.
